@@ -216,15 +216,5 @@ location ~ \.php$ {
 		else 
 			echo "Web server install unsuccessfully"
 		fi
-	else 
-		if [ $(ps -ef | grep -v grep | grep httpd | wc -l) > 0 ] && [ $(ps -ef | grep -v grep | grep nginx | wc -l) > 0 ]
-		then 
-			echo "Web server installed successfully."
-			echo "Document root directory: $documentroot"
-			echo "Nginx configure: /etc/nginx/sites-available/$sitename.conf"
-			echo "Test link: $sitename/info.php"
-		else 
-			echo "Web server install unsuccessfully"
-		fi
 	fi
 fi
